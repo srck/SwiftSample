@@ -10,11 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
                             
+    @IBOutlet var sample : UILabel
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "test"
         // Do any additional setup after loading the view, typically from a nib.
+        self.title = "test"
+        self.sample.text = "sample"
     }
 
     override func didReceiveMemoryWarning() {
