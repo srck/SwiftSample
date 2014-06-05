@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         var leftData = leftField.text
         var rightData = rightField.text
         var resultData = String(leftData.toInt()! + rightData.toInt()!)
+
         result.text = resultData
         self.view.endEditing(true)
     }
