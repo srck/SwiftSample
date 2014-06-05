@@ -11,13 +11,26 @@ import UIKit
 class ViewController: UIViewController {
                             
     @IBOutlet var sample : UILabel
+    @IBOutlet var result : UILabel
+    @IBOutlet var leftField : UITextField
+    @IBOutlet var rightField : UITextField
+    @IBOutlet var calcButton : UIButton
+
+    @IBAction func calculate(sender : AnyObject) {
+        var leftData = leftField.text
+        var rightData = rightField.text
+        var resultData = String(leftData.toInt()! + rightData.toInt()!)
+
+        result.text = resultData
+        self.view.endEditing(true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "test"
-        self.sample.text = "sample"
+        sample.text = "sample"
     }
 
     override func didReceiveMemoryWarning() {
