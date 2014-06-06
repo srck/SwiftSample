@@ -17,11 +17,20 @@ class ViewController: UIViewController {
     @IBOutlet var calcButton : UIButton
 
     @IBAction func calculate(sender : AnyObject) {
-        var leftData = leftField.text
-        var rightData = rightField.text
-        var resultData = String(leftData.toInt()! + rightData.toInt()!)
+        let leftData   = leftField.text
+        let rightData  = rightField.text
+        var resultNum: Int = 0
 
-        result.text = resultData
+        func add(v:String) {
+            if let num:Int = v.toInt() {
+                resultNum += num
+            }
+        }
+
+        add(leftData)
+        add(rightData)
+        
+        result.text = String(resultNum)
         self.view.endEditing(true)
     }
 
@@ -37,7 +46,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
